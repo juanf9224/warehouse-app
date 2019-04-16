@@ -2,13 +2,17 @@
 //@import '../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css';
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-//@import '~@angular/material/theming';
+@import '../node_modules/@angular/material/theming.scss';
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
-//@include mat-core();
+@include mat-core();
+
+$scroll-bar-color: mat-color(mat-palette($mat-deep-purple));
+
+$scroll-bar-bg: $scroll-bar-color;
 
 html, body {  height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

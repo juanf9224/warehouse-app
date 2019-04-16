@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
-import {IProductDetail} from '../../product-list/product-detail/product-detail.model';
+import { IOrder } from 'src/app/shared/models/order/order.model';
+import { ShoppingCartService } from '../shopping-cart/shopping-cart.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductDataService {
-  product: IProductDetail;
-  productList: IProductDetail[] = [];
-  quantity = 0;
+  orders: IOrder[] = [];
 
-  constructor() {}
+  constructor(private shoppingCartService: ShoppingCartService) {
+    this.shoppingCartService.cartItemsSubscription.subscribe(order => {
+      this.orders.push(order);
+      console.log(this.orders);
+    });
+  }
 }

@@ -11,7 +11,12 @@ import {
   MatListModule,
   MatInputModule,
   MatToolbarModule,
+  MatBadgeModule,
+  MatFormFieldModule,
+  MatSnackBarModule
 } from '@angular/material';
+
+import { ScrollingModule, ScrollDispatchModule } from '@angular/cdk/scrolling';
 
 @NgModule({
     imports: [
@@ -25,7 +30,12 @@ import {
       MatGridListModule,
       MatListModule,
       MatInputModule,
-      MatToolbarModule
+      MatToolbarModule,
+      MatBadgeModule,
+      MatFormFieldModule,
+      ScrollingModule,
+      ScrollDispatchModule,
+      MatSnackBarModule
     ],
     exports: [
       MatButtonModule,
@@ -38,7 +48,12 @@ import {
       MatGridListModule,
       MatListModule,
       MatInputModule,
-      MatToolbarModule
+      MatToolbarModule,
+      MatBadgeModule,
+      MatFormFieldModule,
+      ScrollingModule,
+      ScrollDispatchModule,
+      MatSnackBarModule
     ]
 })
 export class MaterialDesignCustomModule {}

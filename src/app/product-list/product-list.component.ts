@@ -27,11 +27,6 @@ export class ProductListComponent implements OnInit {
     this.productService.findAll().subscribe(res => this.productList = res.body);
   }
 
-  addToCart(product) {
-    this.productDataService.quantity = this.productDataService.quantity + this.quantity;
-    this.productDataService.productList.push(product);
-  }
-
   getImageToUse(name: string) {
     return MockImageUtil.getImageToUse(name);
   }

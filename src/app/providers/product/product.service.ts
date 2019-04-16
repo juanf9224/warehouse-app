@@ -19,6 +19,10 @@ export class ProductService {
     return this.http.get<IProductDetail[]>(this.resourceUrl, {observe: 'response'});
   }
 
+  findAllById(ids: string[]): Observable<ResponseArray> {
+    return this.http.post<IProductDetail[]>(`${this.resourceUrl}/findAllById`, ids, {observe: 'response'});
+  }
+
   find(id: string): Observable<ResponseBody>  {
     return this.http.get<IProductDetail>(`${this.resourceUrl}/${id}`, {observe: 'response'});
   }
@@ -28,6 +32,6 @@ export class ProductService {
   }
 
   update(product: IProductDetail): Observable<ResponseBody> {
-    return this.http.put<IProductDetail>(this.resourceUrl, product, { observe: 'response' });
+    return this.http.put<IProductDetail>(`${this.resourceUrl}/${product._id}`, product, { observe: 'response' });
   }
 }

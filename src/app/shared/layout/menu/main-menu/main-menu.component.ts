@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {Subject} from 'rxjs';
 import {ShoppingCartService} from '../../../../providers/shopping-cart/shopping-cart.service';
 
 @Component({
@@ -9,7 +8,6 @@ import {ShoppingCartService} from '../../../../providers/shopping-cart/shopping-
   styleUrls: ['./main-menu.component.sass']
 })
 export class MainMenuComponent implements OnInit {
-
   cartItems = 0;
 
   constructor(
@@ -18,9 +16,12 @@ export class MainMenuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.shoppingCartService.cartItemsSubscription.subscribe(quantity => {
-      console.log(quantity);
-      this.cartItems = this.cartItems + quantity;
+    this.shoppingCartService.cartItemsSubscription.subscribe(order => {
+      if (order.itemsCount === 0) {
+        this.cartItems = 0;
+      } else {
+        this.cartItems = this.cartItems + order.itemsCount;
+      }
       console.log(this.cartItems);
     });
   }

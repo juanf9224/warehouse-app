@@ -13,6 +13,7 @@ import { MainMenuComponent } from './shared/layout/menu/main-menu/main-menu.comp
 import { MaterialDesignCustomModule } from './shared/modules/material-design/material-design.module';
 import {FormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductMaintenanceComponent } from './product-maintenance/product-maintenance.component';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ProductListComponent,
     ProductDetailComponent,
     CheckoutComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    ProductMaintenanceComponent
   ],
   providers: [],
   bootstrap: [AppComponent],

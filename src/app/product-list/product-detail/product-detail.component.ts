@@ -34,7 +34,7 @@ export class ProductDetailComponent implements OnInit {
   }
 
   addToCart() {
-    this.shoppingCartService.cartItemsSubscription.next(this.buyingQuantity);
+    this.shoppingCartService.cartItemsSubscription.next({ product: this.product, itemsCount: this.buyingQuantity });
   }
 
 }

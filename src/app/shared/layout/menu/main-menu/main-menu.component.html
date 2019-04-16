@@ -4,6 +4,10 @@
       <mat-icon>home</mat-icon>
       Inventario
     </button>
+    <button mat-button routerLink="/product-maintenance">
+      <mat-icon>build</mat-icon>
+      <mat-label>Añadir/Actualizar productos</mat-label>
+    </button>
     <button mat-button (click)="goToCheckout()">
       <mat-icon [matBadge]="cartItems">shopping_cart</mat-icon>
     </button>
