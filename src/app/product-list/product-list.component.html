@@ -1,3 +1,11 @@
-<mat-list role="list">
-        <app-product-detail *ngFor="let product of productList" [product]="product"></app-product-detail>    
-</mat-list>
+<div class="container">
+  <mat-grid-list [cols]="4">
+    <mat-grid-tile *ngFor="let product of productList">
+      <img class="img-thumbnail w-100 h-75" [src]="'../../assets/' + getImageToUse(product.name)">
+      <mat-grid-tile-footer>
+        <a [routerLink]="['/product-detail', product._id]" class="product-name-link" matLine><h6>{{ product.name }}</h6></a>
+        <p>Precio: {{ product.price }}</p>
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

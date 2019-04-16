@@ -11,6 +11,8 @@ import { ProductDetailComponent } from './product-list/product-detail/product-de
 import { CheckoutComponent } from './checkout/checkout.component';
 import { MainMenuComponent } from './shared/layout/menu/main-menu/main-menu.component';
 import { MaterialDesignCustomModule } from './shared/modules/material-design/material-design.module';
+import {FormsModule} from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
@@ -19,6 +21,8 @@ import { MaterialDesignCustomModule } from './shared/modules/material-design/mat
     HttpClientModule,
     MaterialDesignCustomModule,
     AppRoutingModule,
+    FormsModule,
+    NgbModule.forRoot()
   ],
   declarations: [
     AppComponent,

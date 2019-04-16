@@ -1,5 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IProductDetail } from './product-detail.model';
+import {ProductService} from '../../providers/product/product.service';
+import {ActivatedRoute} from '@angular/router';
+import {MockImageUtil} from '../../shared/util/mock-image.util';
+import {ShoppingCartService} from '../../providers/shopping-cart/shopping-cart.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -8,11 +12,29 @@ import { IProductDetail } from './product-detail.model';
 })
 export class ProductDetailComponent implements OnInit {
 
-  @Input() product: IProductDetail;
+  product: IProductDetail;
+  buyingQuantity = 1;
 
-  constructor() { }
+  constructor(
+    private productService: ProductService,
+    private activatedRoute: ActivatedRoute,
+    private shoppingCartService: ShoppingCartService
+  ) { }
 
   ngOnInit() {
+    this.activatedRoute.params
+      .subscribe((data: any) => this.productService.find(data.id)
+                                        .subscribe(res => this.product = res.body)) ;
+  }
+
+  getImageToUse() {
+    if (this.product) {
+      return MockImageUtil.getImageToUse(this.product.name);
+    }
+  }
+
+  addToCart() {
+    this.shoppingCartService.cartItemsSubscription.next(this.buyingQuantity);
   }
 
 }

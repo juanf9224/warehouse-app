@@ -1,25 +1,25 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title *ngIf="product">      
-      {{product.name || ''}}
-    </mat-card-title>
-  </mat-card-header>
-  <mat-card-content *ngIf="product">
-    <!-- <mat-grid-list cols="2" rowHeight="2:1">
-        <mat-grid-tile>Precio:</mat-grid-tile>
-        <mat-grid-tile>{{product.price || '0.00'}}</mat-grid-tile>
-        <mat-grid-tile>Cantidad disponible:</mat-grid-tile>
-        <mat-grid-tile>{{product.quantity || '0'}}</mat-grid-tile>
-        <mat-grid-tile>Fecha de expiración:</mat-grid-tile>
-        <mat-grid-tile>{{product.expirationDate || ''}}</mat-grid-tile>
-        <mat-grid-tile>Garantía:</mat-grid-tile>
-        <mat-grid-tile>{{product.warranty || ''}}</mat-grid-tile>
-    </mat-grid-list> -->
-    <mat-list role="list">
-      <mat-list-item role="listitem">Precio: {{product.price || '0.00'}}</mat-list-item>
-      <mat-list-item role="listitem">Cantidad disponible: </mat-list-item>
-      <mat-list-item role="listitem">Fecha de expiración: {{product.expirationDate || ''}}</mat-list-item>
-      <mat-list-item role="listitem">Garantía: {{product.warranty || ''}}</mat-list-item>
-    </mat-list> 
-  </mat-card-content>
-</mat-card>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title *ngIf="product">
+            {{product.name || ''}}
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content *ngIf="product">
+          <mat-list role="list">
+            <mat-list-item role="listitem">Precio: {{product.price || '0.00'}}</mat-list-item>
+            <mat-list-item role="listitem">Cantidad disponible: </mat-list-item>
+            <mat-list-item role="listitem">Fecha de expiración: {{product.expirationDate || ''}}</mat-list-item>
+            <mat-list-item role="listitem">Garantía: {{product.warranty || ''}}</mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+      <button mat-raised-button (click)="addToCart()"> add to cart</button>
+    </div>
+    <div class="col-md-6">
+      <img class="img-thumbnail w-100 h-75" [src]="'../../assets/' + getImageToUse()">
+    </div>
+  </div>
+</div>

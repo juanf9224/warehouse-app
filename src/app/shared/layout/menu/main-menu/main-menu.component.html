@@ -1,3 +1,12 @@
 <mat-toolbar color="primary">
-    <span>Inventario</span>
+  <mat-toolbar-row>
+    <button mat-button routerLink="/">
+      <mat-icon>home</mat-icon>
+      Inventario
+    </button>
+    <button mat-button (click)="goToCheckout()">
+      <mat-icon [matBadge]="cartItems">shopping_cart</mat-icon>
+    </button>
+  </mat-toolbar-row>
 </mat-toolbar>
+<mat-divider></mat-divider>

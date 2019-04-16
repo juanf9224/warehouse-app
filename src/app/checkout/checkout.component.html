@@ -1,3 +1,31 @@
-<p>
-  checkout works!
-</p>
+<div class="container">
+  <div class="row w-100">
+    <div class="col-md-6">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            Facturación
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="row w-100" *ngFor="let product of productList">
+            <div class="col-md-6">Producto: </div><div class="col-md-6">{{ product.name }}</div>
+            <div class="col-md-6">Precio:</div><div class="col-md-6">{{ product.price }}</div>
+            <div class="col-md-6">Cantidad</div><div class="col-md-6">{{ quantity }}</div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col-md-6">
+      <input placeholder="Vendedor" [(ngModel)]="salesman">
+      <input placeholder="Cliente" [(ngModel)]="client">
+      <mat-divider></mat-divider>
+      <button mat-raised-button (click)="makePayment()" [disabled]="!amount || !salesman || !client">
+        <mat-icon>payment</mat-icon> Realizar Pago
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
