@@ -13,6 +13,8 @@ export class MockImageUtil {
       return 'microondas.png';
     } else if (name.toLowerCase().includes('tv')) {
       return 'tv.png';
+    } else if (name.toLowerCase().includes('laptop')) {
+      return 'laptop.png';
     } else { return 'generica.png'; }
   }
 }

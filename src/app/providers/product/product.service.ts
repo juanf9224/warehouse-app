@@ -27,7 +27,7 @@ export class ProductService {
     return this.http.get<IProductDetail>(`${this.resourceUrl}/${id}`, {observe: 'response'});
   }
 
-  saveProduct(product: IProductDetail): Observable<ResponseBody> {
+  saveProduct(product: any): Observable<ResponseBody> {
     return this.http.post<IProductDetail>(this.resourceUrl, product, { observe: 'response' });
   }
 

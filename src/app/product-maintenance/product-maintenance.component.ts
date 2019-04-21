@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IProductDetail } from '../product-list/product-detail/product-detail.model';
+import {ProductService} from '../providers/product/product.service';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-product-maintenance',
@@ -8,11 +10,24 @@ import { IProductDetail } from '../product-list/product-detail/product-detail.mo
 })
 export class ProductMaintenanceComponent implements OnInit {
 
-  product: IProductDetail = {};
+  product = {
+    name: '',
+    price: 0.00,
+    minPrice: 0.00,
+    maxPrice: 0.00,
+    quantity: 0,
+    expirationDate: '',
+    warranty: ''
+  };
 
-  constructor() { }
+  constructor(private productService: ProductService, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
+  }
+
+  save() {
+    console.log(this.product);
+    this.productService.saveProduct(this.product).subscribe(res => this.snackBar.open('Producto guardado satisfactoriamente', 'Ok'));
   }
 
 }

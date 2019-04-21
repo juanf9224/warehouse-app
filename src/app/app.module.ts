@@ -14,6 +14,7 @@ import { MaterialDesignCustomModule } from './shared/modules/material-design/mat
 import {FormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductMaintenanceComponent } from './product-maintenance/product-maintenance.component';
+import {DialogUtilComponent} from './shared/util/dialog.util';
 
 @NgModule({
   imports: [
@@ -31,7 +32,11 @@ import { ProductMaintenanceComponent } from './product-maintenance/product-maint
     ProductDetailComponent,
     CheckoutComponent,
     MainMenuComponent,
-    ProductMaintenanceComponent
+    ProductMaintenanceComponent,
+    DialogUtilComponent
+  ],
+  entryComponents: [
+    DialogUtilComponent
   ],
   providers: [],
   bootstrap: [AppComponent],

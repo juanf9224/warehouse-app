@@ -11,7 +11,7 @@ export class ProductDataService {
   constructor(private shoppingCartService: ShoppingCartService) {
     this.shoppingCartService.cartItemsSubscription.subscribe(order => {
       this.orders.push(order);
-      console.log(this.orders);
+      console.log('orders', this.orders);
     });
   }
 }

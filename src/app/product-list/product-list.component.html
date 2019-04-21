@@ -1,11 +1,13 @@
 <div class="container">
   <mat-grid-list [cols]="4">
-    <mat-grid-tile *ngFor="let product of productList" [hidden]="product.quantity <= 0">
-      <img class="img-thumbnail w-100 h-75" [src]="'../../assets/' + getImageToUse(product.name)">
-      <mat-grid-tile-footer>
-        <a [routerLink]="['/product-detail', product._id]" class="product-name-link" matLine><h6>{{ product.name }}</h6></a>
-        <p>Precio: {{ product.price }}</p>
-      </mat-grid-tile-footer>
-    </mat-grid-tile>
+    <div *ngFor="let product of productList">
+      <mat-grid-tile *ngIf="product.quantity > 0">
+        <img class="img-thumbnail w-100 h-75" [src]="'../../assets/' + getImageToUse(product.name)">
+        <mat-grid-tile-footer>
+          <a [routerLink]="['/product-detail', product._id]" class="product-name-link" matLine><h6>{{ product.name }}</h6></a>
+          <p>Precio: {{ product.price }}</p>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </div>
   </mat-grid-list>
 </div>

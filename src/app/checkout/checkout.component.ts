@@ -86,8 +86,11 @@ export class CheckoutComponent implements OnInit {
           product.quantity = 0;
         }
         this.productService.update(product).subscribe((response) => {
+          console.log('after update: ', response);
           if (response.body.quantity < 5) {
             this.openSnackBar(`Quedan menos de 5 ${response.body.name}`, 'Ok');
+          } else {
+            this.openSnackBar(`Se realizo la compra satisfactoriamente`, 'Ok');
           }
         });
       });

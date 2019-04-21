@@ -10,13 +10,15 @@
         <mat-card-content *ngIf="product">
           <mat-list role="list">
             <mat-list-item role="listitem">Precio: {{product.price || '0.00'}}</mat-list-item>
-            <mat-list-item role="listitem">Cantidad disponible: </mat-list-item>
+            <mat-list-item role="listitem">Cantidad disponible: {{product.quantity}}</mat-list-item>
             <mat-list-item role="listitem">Fecha de expiración: {{product.expirationDate || ''}}</mat-list-item>
             <mat-list-item role="listitem">Garantía: {{product.warranty || ''}}</mat-list-item>
           </mat-list>
         </mat-card-content>
+        <mat-card-footer>
+          <button mat-raised-button (click)="openDialog()" color="primary" class="float-right"> add to cart</button>
+        </mat-card-footer>
       </mat-card>
-      <button mat-raised-button (click)="addToCart()"> add to cart</button>
     </div>
     <div class="col-md-6">
       <img class="img-thumbnail w-100 h-75" [src]="'../../assets/' + getImageToUse()">
