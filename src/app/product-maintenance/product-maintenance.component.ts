@@ -11,11 +11,12 @@ import {MatSnackBar} from '@angular/material';
 export class ProductMaintenanceComponent implements OnInit {
 
   product = {
+    _id: '',
     name: '',
-    price: 0.00,
-    minPrice: 0.00,
-    maxPrice: 0.00,
-    quantity: 0,
+    price: null,
+    minPrice: null,
+    maxPrice: null,
+    quantity: null,
     expirationDate: '',
     warranty: ''
   };

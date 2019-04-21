@@ -44,6 +44,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "baseHref":"/warehouse-app/",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,

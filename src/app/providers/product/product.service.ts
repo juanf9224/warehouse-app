@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment} from '../../../environments/environment';
 
 import { IProductDetail } from '../../product-list/product-detail/product-detail.model';
 
@@ -11,7 +12,7 @@ type ResponseArray = HttpResponse<IProductDetail[]>;
   providedIn: 'root'
 })
 export class ProductService {
-  resourceUrl = 'http://localhost:5000/api/v1/products';
+  resourceUrl = environment.baseApisUrl + 'api/v1/products';
 
   constructor(private http: HttpClient) { }
 
