@@ -42,20 +42,24 @@
       <div class="col-md-6">
         <mat-form-field appearance="outline" class="d-block">
           <mat-label>Fecha de expiración (Opcional)</mat-label>
-          <input matInput placeholder="Fecha de expiración (Opcional)" [(ngModel)]="product.expirationDate">
+          <input  matInput [matDatepicker]="expirationDatePicker" placeholder="Fecha de expiración (Opcional)" [value]="product.expirationDate" disabled>
+          <mat-datepicker-toggle matSuffix [for]="expirationDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #expirationDatePicker disabled="false"></mat-datepicker>
         </mat-form-field>
       </div>
 
       <div class="col-md-6">
         <mat-form-field appearance="outline" class="d-block">
           <mat-label>Garantía (Opcional)</mat-label>
-          <input matInput placeholder="Garantía (Opcional)" [(ngModel)]="product.warranty">
+          <input  matInput [matDatepicker]="warrantyDatePicker" placeholder="Garantía (Opcional)" [value]="product.warranty" disabled>
+          <mat-datepicker-toggle matSuffix [for]="warrantyDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #warrantyDatePicker disabled="false"></mat-datepicker>
         </mat-form-field>
       </div>
 
       <div class="col-md-6">
         <button mat-raised-button (click)="save()" color="primary" [disabled]="!product">
-          Añadir
+          Guardar cambios
         </button>
       </div>
     </div>

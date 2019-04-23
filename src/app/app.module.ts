@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,10 +13,9 @@ import { ProductDetailComponent } from './product-list/product-detail/product-de
 import { CheckoutComponent } from './checkout/checkout.component';
 import { MainMenuComponent } from './shared/layout/menu/main-menu/main-menu.component';
 import { MaterialDesignCustomModule } from './shared/modules/material-design/material-design.module';
-import {FormsModule} from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductMaintenanceComponent } from './product-maintenance/product-maintenance.component';
 import {DialogUtilComponent} from './shared/util/dialog.util';
+import {ProductMaintenanceViewComponent} from './product-maintenance/product-view.component';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import {DialogUtilComponent} from './shared/util/dialog.util';
     CheckoutComponent,
     MainMenuComponent,
     ProductMaintenanceComponent,
+    ProductMaintenanceViewComponent,
     DialogUtilComponent
   ],
   entryComponents: [

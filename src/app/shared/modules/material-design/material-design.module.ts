@@ -14,7 +14,9 @@ import {
   MatBadgeModule,
   MatFormFieldModule,
   MatSnackBarModule,
-  MatDialogModule
+  MatDialogModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 } from '@angular/material';
 
 import { ScrollingModule, ScrollDispatchModule } from '@angular/cdk/scrolling';
@@ -37,7 +39,9 @@ import { ScrollingModule, ScrollDispatchModule } from '@angular/cdk/scrolling';
       ScrollingModule,
       ScrollDispatchModule,
       MatSnackBarModule,
-      MatDialogModule
+      MatDialogModule,
+      MatDatepickerModule,
+      MatNativeDateModule
     ],
     exports: [
       MatButtonModule,
@@ -56,7 +60,9 @@ import { ScrollingModule, ScrollDispatchModule } from '@angular/cdk/scrolling';
       ScrollingModule,
       ScrollDispatchModule,
       MatSnackBarModule,
-      MatDialogModule
+      MatDialogModule,
+      MatDatepickerModule,
+      MatNativeDateModule
     ]
 })
 export class MaterialDesignCustomModule {}
